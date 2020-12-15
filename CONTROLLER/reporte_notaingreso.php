@@ -1,0 +1,64 @@
+<?php
+    require 'FPDF/fpdf.php';
+    require_once("../MODEL/clsNotaIngreso.php");
+    $NOTING=$_REQUEST['NOTING'];
+    $objNotaIngreso=new clsNotaIngreso();
+    $objNotaIngreso->NOTING=$NOTING;
+    $fila=$objNotaIngreso->reporteNotaIngreso();
+    $filas=$fila->fetch_object();
+    $NOMCIA=$filas->NOMCIA;
+    $fecha=$filas->fecha;
+    $hora=$filas->hora;
+    $NOTING=$filas->NOTING;
+    $FECTRAN=$filas->FECTRAN;
+    $ORDCOM=$filas->ORDCOM;
+    $FACTURA=$filas->FACTURA;
+    $MONEDA=$filas->MONEDA;
+    $DESCRI=$filas->DESCRI;
+    $ALMDES=$filas->ALMDES;
+    $CODTRAN=$filas->CODTRAN;
+    $RAZON=$filas->RAZON;
+    $pdf = new FPDF('P','mm','A4');
+    $pdf->AddPage();
+    $pdf->SetFont('Arial','',10);
+    $pdf->Cell(100,6, $NOMCIA,0,1,'L');
+    $pdf->Cell(150,6,'Fecha',0,0,'R');
+    $pdf->Cell(40,6,':'.$fecha,0,1,'L');
+    $pdf->Cell(150,6,'Hora',0,0,'R');
+    $pdf->Cell(40,6,':'.$hora,0,1,'L');
+    $pdf->Cell(190,6, 'NOTA DE INGRESO/EGRESO  No.'.$NOTING,0,1,'C');
+    $pdf->SetFont('Arial','',8);
+    $pdf->Cell(30,6,'Fecha',0,0);
+    $pdf->Cell(90,6,': '.$FECTRAN,0,0);
+    $pdf->Cell(30,6,'Orden Compra',0,0,'L');
+    $pdf->Cell(40,6,': '.$ORDCOM,0,1,'L');
+    $pdf->Cell(30,6,'Factura',0,0);
+    $pdf->Cell(90,6,': '.$FACTURA,0,0);
+    $pdf->Cell(30,6,'Moneda',0,0,'L');
+    $pdf->Cell(40,6,': '.$MONEDA,0,1,'L');
+    $pdf->Cell(30,6,'Proveedor',0,0);
+    $pdf->Cell(160,6,': '.$DESCRI,0,1);
+    $pdf->Cell(30,6,'Alacen destino',0,0);
+    $pdf->Cell(160,6,': '.$ALMDES,0,1);
+    $pdf->Cell(30,6,'Tipo de transaccion',0,0);
+    $pdf->Cell(160,6,': '.$CODTRAN,0,1);
+    $pdf->Cell(30,6,'Razon de movimiento',0,0);
+    $pdf->Cell(160,6,': '.$RAZON,0,1);
+    $pdf->Ln(10);
+    $pdf->SetFillColor(232,232,232);
+    $pdf->SetFont('Arial','',8);
+    $pdf->Cell(30,6,'Codigo',1,0,'L',1);
+    $pdf->Cell(130,6,'Descripcion',1,0,'L',1);
+    $pdf->Cell(30,6,'Cantidad',1,1,'R',1);
+    require_once("../MODEL/clsDetalleNotaIngreso.php");
+    $objDetalleNotaIngreso=new clsDetalleNotaIngreso();
+    $objDetalleNotaIngreso->NUMORD=$NOTING;
+    $filas=$objDetalleNotaIngreso->cargarDetalleNotaIngreso();
+    while($row = $filas->fetch_assoc())
+    {
+        $pdf->Cell(30,6,utf8_decode($row['CODIGO']),0,0,'L');
+        $pdf->Cell(130,6,utf8_decode($row['DESART']),0,0,'L');
+        $pdf->Cell(30,6,utf8_decode($row['CANTID']),0,1,'R');
+    }
+    $pdf->Output();
+?>

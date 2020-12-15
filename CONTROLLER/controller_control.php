@@ -1,0 +1,115 @@
+<?php
+    $OPC=$_REQUEST["OPC"];
+    if($OPC==1){
+        $Raz_social=$_REQUEST["Raz_social"];
+        $ruc=$_REQUEST["ruc"];
+        $Nombre_c=$_REQUEST["Nombre_c"];
+        $direccion=$_REQUEST["direccion"];
+        $telefono=$_REQUEST["telefono"];
+        $celular=$_REQUEST["celular"];
+        $correo=$_REQUEST["correo"];
+        $pag_web=$_REQUEST["pag_web"];
+        $cta_bco=$_REQUEST["cta_bco"];
+        $cta_cor=$_REQUEST["cta_cor"];
+        $bn_cont=$_REQUEST["bn_cont"];
+        session_name("adminsoft");
+        session_start();
+        require_once("../MODEL/clsControl.php");
+        $objControl=new clsControl();
+        $objControl->CODCTR=$_SESSION['CODCTR'];
+        $objControl->RUCCIA=$ruc;
+        $objControl->NOMCIA=$Raz_social;
+        $objControl->NOMCOM=$Nombre_c;
+        $objControl->DIRCIA=$direccion;
+        $objControl->TELEFO=$telefono;
+        $objControl->CELULA=$celular;
+        $objControl->CORREO=$correo;
+        $objControl->PAGWEB=$pag_web;
+        $objControl->CTABCO=$cta_bco;
+        $objControl->CTACOR=$cta_cor;
+        $objControl->BNCONT=$bn_cont; 
+        if ($_SESSION['CODCTR']==""){
+            if($objControl->agregarControl()){
+                $objControl->cargarControl();
+                $_SESSION['CODCTR']=$objControl->CODCTR;
+                $_SESSION['RUCCIA']=$objControl->RUCCIA;
+                $_SESSION['NOMCIA']=$objControl->NOMCIA;
+                $_SESSION['NOMCOM']=$objControl->NOMCOM;
+                $_SESSION['DIRCIA']=$objControl->DIRCIA;
+                $_SESSION['TELEFO']=$objControl->TELEFO;
+                $_SESSION['CELULA']=$objControl->CELULA;
+                $_SESSION['CORREO']=$objControl->CORREO;
+                $_SESSION['PAGWEB']=$objControl->PAGWEB;
+                $_SESSION['CTABCO']=$objControl->CTABCO;
+                $_SESSION['CTACOR']=$objControl->CTACOR;
+                $_SESSION['BNCONT']=$objControl->BNCONT;
+
+                $_SESSION['estadoControl']=1;//creado exitosamente
+                header("location:../VISTA/mi-empresa.php");
+            }else{
+                $_SESSION['estadoControl']=2;//error al crear empresa
+                header("location:../VISTA/mi-empresa.php");
+            }
+        }else{
+            if($objControl->actualizarControl()){
+                $objControl->cargarControl();
+                $_SESSION['CODCTR']=$objControl->CODCTR;
+                $_SESSION['RUCCIA']=$objControl->RUCCIA;
+                $_SESSION['NOMCIA']=$objControl->NOMCIA;
+                $_SESSION['NOMCOM']=$objControl->NOMCOM;
+                $_SESSION['DIRCIA']=$objControl->DIRCIA;
+                $_SESSION['TELEFO']=$objControl->TELEFO;
+                $_SESSION['CELULA']=$objControl->CELULA;
+                $_SESSION['CORREO']=$objControl->CORREO;
+                $_SESSION['PAGWEB']=$objControl->PAGWEB;
+                $_SESSION['CTABCO']=$objControl->CTABCO;
+                $_SESSION['CTACOR']=$objControl->CTACOR;
+                $_SESSION['BNCONT']=$objControl->BNCONT;
+                $_SESSION['IGV']=$objControl->IGV;
+                $_SESSION['MONEDA']=$objControl->MONEDA;
+                $_SESSION['PUIGV']=$objControl->PUIGV;
+                $_SESSION['estadoControl']=3;//actualizado exitosamente
+                header("location:../VISTA/mi-empresa.php");
+            }else{
+                $_SESSION['estadoControl']=4;//error al actualziar
+                header("location:../VISTA/mi-empresa.php");
+            }
+        }
+    }
+    if($OPC==2){
+        $IGV=$_REQUEST["IGV"];
+        $moneda=$_REQUEST["moneda"];
+        $PUIGV=$_REQUEST["PUIGV"];
+        session_name("adminsoft");
+        session_start();
+        require_once("../MODEL/clsControl.php");
+        $objControl=new clsControl();
+        $objControl->CODCTR=$_SESSION['CODCTR'];
+        $objControl->IGV=$IGV; 
+        $objControl->MONEDA=$moneda; 
+        $objControl->PUIGV=$PUIGV; 
+        if($objControl->actualizarControl1()){
+            $objControl->cargarControl();
+            $_SESSION['CODCTR']=$objControl->CODCTR;
+            $_SESSION['RUCCIA']=$objControl->RUCCIA;
+            $_SESSION['NOMCIA']=$objControl->NOMCIA;
+            $_SESSION['NOMCOM']=$objControl->NOMCOM;
+            $_SESSION['DIRCIA']=$objControl->DIRCIA;
+            $_SESSION['TELEFO']=$objControl->TELEFO;
+            $_SESSION['CELULA']=$objControl->CELULA;
+            $_SESSION['CORREO']=$objControl->CORREO;
+            $_SESSION['PAGWEB']=$objControl->PAGWEB;
+            $_SESSION['CTABCO']=$objControl->CTABCO;
+            $_SESSION['CTACOR']=$objControl->CTACOR;
+            $_SESSION['BNCONT']=$objControl->BNCONT;
+            $_SESSION['IGV']=$objControl->IGV;
+            $_SESSION['MONEDA']=$objControl->MONEDA;
+            $_SESSION['PUIGV']=$objControl->PUIGV;
+            $_SESSION['estadoControl']=3;//actualizado exitosamente
+            header("location:../VISTA/mi-empresa.php");
+        }else{
+            $_SESSION['estadoControl']=4;//error al actualziar
+            header("location:../VISTA/mi-empresa.php");
+        }
+    }
+?>

@@ -1,0 +1,5 @@
+seseion: adminsoft
+
+logeo:si se logeo 1:0
+
+

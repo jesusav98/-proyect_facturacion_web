@@ -1,0 +1,91 @@
+<?php
+    $opc_Facturacion=$_REQUEST["opc_Facturacion"];
+    if($opc_Facturacion == "1" || $opc_Facturacion==1){/*nuevo Facturacion*/
+        $Tipo_doc=$_REQUEST["Tipo_doc"];
+        $Serie=$_REQUEST["Serie"];
+        $Motivo=$_REQUEST["Motivo"];
+        $Fec_doc=$_REQUEST["Fec_doc"];
+        $Fec_ven=$_REQUEST["Fec_ven"];
+        $ruc=$_REQUEST["ruc"];
+        $Raz_social=$_REQUEST["Raz_social"];
+        $cotizacion=$_REQUEST["n_cotizacion"];
+        $Lugar_entrega=$_REQUEST["Lugar_entrega"];
+        $moneda=$_REQUEST["moneda"];
+        $forma_pago=$_REQUEST["forma_pago"];
+        $cond_vent=$_REQUEST["cond_vent"];
+        $ord_com=$_REQUEST["ord_com"];
+        $Vendedor=$_REQUEST["Vendedor"];
+        $afe_detra=$_REQUEST["afe_detra"];
+        $mon_detra=$_REQUEST["mon_detra"];
+        $descuento=$_REQUEST["descuento"];
+        $Tipo_doc_ref=$_REQUEST["Tipo_doc_ref"];
+        $Ser_doc_ref=$_REQUEST["Ser_doc_ref"];
+        $num_doc_ref=$_REQUEST["num_doc_ref"];
+        $Fec_doc_ref=$_REQUEST["Fec_doc_ref"];
+        $subTotal=$_REQUEST["subTotal"];
+        $basimp=$_REQUEST["basimp"];
+        $exoneracion=$_REQUEST["exoneracion"];
+        $inafectos=$_REQUEST["inafectos"];
+        $igv=$_REQUEST["igv"];
+        $total=$_REQUEST["total"];
+        session_name("adminsoft");
+        session_start();
+        require_once("../MODEL/clsFacturacion.php");
+        $objFacturacion=new clsFacturacion();
+        $objFacturacion->LOCALI='01'; 
+        $objFacturacion->CLADOC=$Tipo_doc;
+        $objFacturacion->SERIE=$Serie;
+        $objFacturacion->MOTIVO=$Motivo;
+        $objFacturacion->FECDOC=$Fec_doc;
+        $objFacturacion->FECVEN=$Fec_ven;
+        $objFacturacion->RUC=$ruc;
+        $objFacturacion->RAZSOC=$Raz_social;
+        $objFacturacion->DIRCLI=$Lugar_entrega;
+        $objFacturacion->NUMCOT=$cotizacion;
+        $objFacturacion->CODMON=$moneda;
+        $objFacturacion->TIPVEN=$forma_pago;
+        $objFacturacion->CONDVEN=$cond_vent;
+        $objFacturacion->ORDCOM=$ord_com;
+        $objFacturacion->CODVEN=$Vendedor;
+        $objFacturacion->AFEDETRA=$afe_detra;
+        $objFacturacion->PORDETRA=$mon_detra;
+        $objFacturacion->AFEAGERET=0;
+        $objFacturacion->PORAGERET=0;
+        $objFacturacion->PORDES=$descuento;
+        $objFacturacion->CLADOCAPLI=$Tipo_doc_ref;
+        $objFacturacion->SERIEAPLI=$Ser_doc_ref;
+        $objFacturacion->NUMDOCAPLI=$num_doc_ref;
+        $objFacturacion->FECDOCAPLI=$Fec_doc_ref;
+        $objFacturacion->IMPBRU=$subTotal;
+        $objFacturacion->IMPBI=$basimp;
+        $objFacturacion->IMPDES=0;
+        $objFacturacion->IMPEXO=$exoneracion;
+        $objFacturacion->IMPINAFEC=$inafectos;
+        $objFacturacion->IMPIMP=$igv;
+        $objFacturacion->IMPTOT=$total;
+        $objFacturacion->TIPCAM=0;
+        $objFacturacion->BUENCONTR=0;
+        $objFacturacion->USU_CREA=$_SESSION['TXCODIGOUSUARIO'];
+        $objFacturacion->FEC_CREA=date_create(date());
+        /*if($objFacturacion->agregarFacturacion()){
+            header("location:../VISTA/Facturacion.php");
+        }*/
+        
+        $NUMDOC=$objFacturacion->agregarFacturacion();
+        echo $NUMDOC;
+    }
+    if($opc_Facturacion == "2" || $opc_Facturacion==2){/*anular Facturacion*/
+        $CLADOC=$_REQUEST["CLADOC"];
+        $SERIE=$_REQUEST["SERIE"];
+        $NUMDOC=$_REQUEST["NUMDOC"];
+        session_name("adminsoft");
+        session_start();
+        require_once("../MODEL/clsFacturacion.php");
+        $objFacturacion=new clsFacturacion();
+        $objFacturacion->CLADOC=$CLADOC;
+        $objFacturacion->SERIE=$SERIE;
+        $objFacturacion->NUMDOC=$NUMDOC;
+        $NUMDOC=$objFacturacion->anularFacturacion();
+        echo $NUMDOC;
+    }
+?>

@@ -1,0 +1,341 @@
+
+#content{
+ background: white;
+font-family: 'Poppins', sans-serif;
+/*  height: 100%;*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 10pt;
+}
+
+.codigo{
+  width: 15%;
+  text-align: center;
+  font-weight: 500;
+}
+.descrip{
+  width: 30%;
+}
+.opciones{
+  width: 10%;
+}
+.Cant{
+  width:12%;
+  text-align: center;
+}
+.precio-u{
+  width:16%;
+  text-align: center;
+  
+}
+.Total{
+  width:16%;
+  text-align: center;
+}
+.opc{
+  width: 10%;
+  text-align: center
+}
+.F-venta{font-weight: 500; width: 15%;}
+.F-dcmto{font-weight: 500; width: 10%;}
+.F-venta{font-weight: 500; width: 10%;}
+.ctacte{font-weight: 500;}
+.moneda{font-weight: 500; width: 10%;}
+.importe{font-weight: 500;}
+.c-a{font-weight: 500;}
+.planilla{font-weight: 500;}
+
+.cabecera{
+  background: #21aa45;
+  color: white;
+}
+
+.tabla{
+  font-family: 'Poppins', sans-serif;
+}
+
+.buscar-doc label{
+  padding-right: 0;
+  color: #21aa45;
+}
+.buscar-doc input{
+  padding-right: 0;
+  font-size: 10pt;
+}
+.buscar-doc input:focus{
+  box-shadow: none;
+  outline: none;
+}
+.total-soles input{
+  text-align: right;
+}
+.total-dolar input{
+  text-align: right;
+}
+.label-soles label{
+  margin-top: 8px;;
+  padding-bottom: 0;
+}.label-dolar label{
+  margin-top: 6px;;
+  padding-bottom: 0;
+}
+
+/*
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: 0.8em;
+  white-space: nowrap;
+  font-size: 10pt;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+  margin: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+*/
+
+
+.producto{
+  margin-bottom: 15px;
+  background: #21aa45;
+  border: none;
+  padding: 8px;
+  color: white;
+  outline: none;
+  transition: .3s all ease;
+  cursor: pointer;
+}
+.producto:focus{
+  outline: none;
+}
+.producto:hover{
+  background: #24b94b;
+}
+
+.facturacion{
+  margin-bottom: 30px;
+}
+.facturacion label{
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #21aa45;
+  font-weight: 500;
+}
+.facturacion select{
+  height: 31px;
+  padding: 0px 10px;
+  font-size: 10pt;
+}
+
+.facturacion input{
+  font-size: 10pt;
+}
+
+#clientes.table-striped tbody tr:nth-of-type(odd):hover {
+    background-color: #21aa45;
+  color: white;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+#clientes.table-striped tbody tr:nth-of-type(even):hover {
+    background-color: #21aa45;
+  color: white;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+
+.btn-search{
+  border: none;
+  background: #21aa45;
+  color: white;
+  cursor: pointer;
+}
+.btn-search-cotizacion{
+  border: none;
+  background: #21aa45;
+  color: white;
+  cursor: pointer;
+}
+.btn-search-cotizacion:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.btn-search:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.btn-search-n-referencia{
+  border: none;
+  background: #21aa45;
+  color: white;
+  cursor: pointer;
+}
+.btn-search-n-referencia{
+  border: none;
+  background: #21aa45;
+  color: white;
+  cursor: pointer;
+}
+.btn-search-n-referencia:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.btn-search-n-referencia:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+div.modal-backdrop.show {
+    opacity: .5;
+}
+
+
+div.facturacion input:focus{
+  outline: none;
+  box-shadow: none;
+}
+div.facturacion select:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+div.calculo input:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+div.modal-content{
+  border-style: none;
+  border: none;
+  font-size: 10pt;
+font-family: 'Poppins', sans-serif;
+ -webkit-box-shadow: 1px 3px 14px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 3px 14px -2px rgba(0,0,0,0.75);
+box-shadow: 1px 3px 14px -2px rgba(0,0,0,0.75);
+}
+div.modal-content button{
+  border-style: none;
+  border: none;
+  outline: none;
+}
+div.modal-content input{
+  outline: none;
+  box-shadow: none;
+  font-size: 10pt;
+}
+div.modal-content input:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+div.modal-footer{
+  padding-top: 20px;
+  padding-bottom: 0px;
+  border: none;
+}
+button.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+  box-shadow: none;
+  outline: none;
+}
+button.close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+div.modal-body label{
+  margin-top: 7px;
+  margin-bottom: 3px;
+  color: #21aa45;
+  font-weight: 500;
+}
+div.modal-body h5{
+  margin-top: 7px;
+  margin-bottom: 3px;
+  color: #484848;
+  font-weight: 500;
+  font-size: 12pt;
+}
+
+.modal-header{
+  background: #21aa45;
+  color: white;
+}
+
+.modal-footer .btn-cancelar{
+  background: #9f9f9f;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.modal-footer .btn-cancelar:hover{
+  background: #898989;
+}
+.modal-footer .btn-guardar{
+  background: #21aa45;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.modal-footer .btn-eliminar{
+  background: #21aa45;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.modal-footer .btn-eliminar:hover{
+  background: #1e9b3f;
+}
+.modal-footer .btn-guardar:hover{
+  background: #1e9b3f;
+}
+
+.nav-tabs a.nav-link{
+  background: none;
+  color: gray;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs li .nav-link.active {
+  color: #ffffff;
+  background-color: #21aa45;
+  font-weight: 400;
+}
+
+
+div.calculo input{
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+div.calculo label{
+  text-align: right;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+ 
+div.calculo{
+  padding-bottom: 10px;
+}

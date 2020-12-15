@@ -1,0 +1,246 @@
+#content{
+ background: white;
+ z-index: 2;
+font-family: 'Poppins', sans-serif;
+/*  height: 100%;*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 10pt;
+}
+
+/*
+table{
+  cursor: pointer;
+}
+
+table.table-striped tbody tr.odd:active{
+  background: #21aa45;
+  color: white
+}
+
+table.table-striped tbody tr.even:active{
+  background: #21aa45;
+  color: white
+}
+*/
+
+label{
+  color: #21aa45;
+}
+
+.codigo{
+  width: 8%;
+}
+.dni{
+  width: 9%;
+}
+.ApePat{
+  width: 20%;
+}
+.ApeMat{
+  width: 20%;
+}
+.opciones{
+  width: 8%;
+}
+div.modal-backdrop.show {
+    opacity: .5;
+}
+
+.anular-doc{
+  margin-bottom: 15px;
+  border: none;
+  padding: 8px;
+  color: white;
+  outline: none;
+  border-radius: 8px;
+  transition: .3s all ease;
+  cursor: pointer;
+  -webkit-box-shadow: 5px 8px 10px -9px rgba(0,0,0,0.75);
+-moz-box-shadow: 5px 8px 10px -9px rgba(0,0,0,0.75);
+box-shadow: 5px 8px 10px -9px rgba(0,0,0,0.75);
+background: rgba(33,170,69,1);
+background: -moz-linear-gradient(left, rgba(33,170,69,1) 0%, rgba(44,209,85,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(33,170,69,1)), color-stop(100%, rgba(44,209,85,1)));
+background: -webkit-linear-gradient(left, rgba(33,170,69,1) 0%, rgba(44,209,85,1) 100%);
+background: -o-linear-gradient(left, rgba(33,170,69,1) 0%, rgba(44,209,85,1) 100%);
+background: -ms-linear-gradient(left, rgba(33,170,69,1) 0%, rgba(44,209,85,1) 100%);
+background: linear-gradient(to right, rgba(33,170,69,1) 0%, rgba(44,209,85,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21aa45', endColorstr='#2cd155', GradientType=1 );
+}
+.anular-doc:focus{
+  outline: none;
+}
+/*
+.anular-doc:hover{
+  background: #24b94b;
+}
+*/
+div .custom-select:focus{
+  outline: none;
+  box-shadow: none;
+}
+#N-doc,#fec-doc:focus{
+  outline: none;
+  box-shadow: none;
+}
+.btn-search{
+  border: none;
+  background: #21aa45;
+  color: white;
+  cursor: pointer;
+}
+.btn-search-cotizacion:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.btn-search:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+div.caja-boton div{
+  text-align: right;
+  padding-top: 15px;
+}
+
+#tabla-documentos.table-striped tbody tr:nth-of-type(odd):hover {
+    background-color: #21aa45;
+  color: white;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+#tabla-documentos.table-striped tbody tr:nth-of-type(even):hover {
+    background-color: #21aa45;
+  color: white;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+div.modal-content{
+  border-style: none;
+  border: none;
+font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+ -webkit-box-shadow: 1px 3px 14px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 3px 14px -2px rgba(0,0,0,0.75);
+box-shadow: 1px 3px 14px -2px rgba(0,0,0,0.75);
+  font-size: 10pt
+}
+
+div.modal-footer{
+  padding-top: 25px;
+  padding-bottom: 0;
+  border: none;
+}
+div.modal-content button{
+  border-style: none;
+  border: none;
+  outline: none;
+}
+div.modal-content input{
+  outline: none;
+  box-shadow: none;
+}
+div.modal-content input:focus{
+  outline: none;
+  box-shadow: none;
+}
+.container h4{
+  color: #21aa45;
+}
+.container input{
+  margin-bottom: 10px;
+}
+.container label{
+  margin-bottom: 2px;
+}
+.container select{
+  font-size:10pt;
+  height: 32px;
+  margin-bottom: 11px;
+}
+
+div.modal-content select:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+
+button.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+  box-shadow: none;
+  outline: none;
+}
+button.close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+div.modal-body label{
+  margin-top: 7px;
+  margin-bottom: 3px;
+  color: #21aa45;
+  font-weight: 500;
+}
+div.modal-body h5{
+  margin-top: 7px;
+  margin-bottom: 3px;
+  color: #484848;
+  font-weight: 500;
+  font-size: 12pt;
+}
+
+.modal-header{
+  background: #21aa45;
+  color: white;
+}
+
+.modal-footer .btn-cancelar{
+  background: #9f9f9f;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.modal-footer .btn-cancelar:hover{
+  background: #898989;
+}
+.modal-footer .btn-guardar{
+  background: #21aa45;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.modal-footer .btn-eliminar{
+  background: #21aa45;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.modal-footer .btn-eliminar:hover{
+  background: #1e9b3f;
+}
+.modal-footer .btn-guardar:hover{
+  background: #1e9b3f;
+}

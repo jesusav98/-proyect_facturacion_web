@@ -1,0 +1,250 @@
+#content{
+ background: white;
+ z-index: 2;
+font-family: 'Poppins', sans-serif;
+/*  height: 100%;*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 10pt;
+}
+
+/*
+table{
+  cursor: pointer;
+}
+
+table.table-striped tbody tr.odd:active{
+  background: #21aa45;
+  color: white
+}
+
+table.table-striped tbody tr.even:active{
+  background: #21aa45;
+  color: white
+}
+*/
+
+label{
+  color: #21aa45;
+}
+
+.Num{
+  width: 10%;
+}
+.fec-carg{
+  width: 12%;
+}
+.fec-gen{
+  width: 12%;
+}
+.fec-gen{
+  width: 12%;
+}
+.fec-env{
+  width: 12%;
+}
+.estado{
+  width: 8%;
+}
+.N-doc{
+  width: 15%;
+}
+.ApeMat{
+  width: 20%;
+}
+.opciones{
+  width: 8%;
+}
+div.modal-backdrop.show {
+    opacity: .5;
+}
+
+.nuevo-usuario{
+  margin-bottom: 15px;
+  background: #21aa45;
+  border: none;
+  padding: 8px;
+  color: white;
+  outline: none;
+  transition: .3s all ease;
+  cursor: pointer;
+}
+.nuevo-usuario:focus{
+  outline: none;
+}
+.nuevo-usuario:hover{
+  background: #24b94b;
+}
+
+tbody td a i.fa-print{
+  color: white;
+  padding: 4px 5px;
+  border-radius: 3px;
+  background: rgba(53,77,153,1);
+background: -moz-linear-gradient(45deg, rgba(53,77,153,1) 0%, rgba(71,151,237,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(53,77,153,1)), color-stop(100%, rgba(71,151,237,1)));
+background: -webkit-linear-gradient(45deg, rgba(53,77,153,1) 0%, rgba(71,151,237,1) 100%);
+background: -o-linear-gradient(45deg, rgba(53,77,153,1) 0%, rgba(71,151,237,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(53,77,153,1) 0%, rgba(71,151,237,1) 100%);
+background: linear-gradient(45deg, rgba(53,77,153,1) 0%, rgba(71,151,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#354d99', endColorstr='#4797ed', GradientType=1 );
+}
+
+div.custom-checkbox label{
+  color: #21aa45;
+  padding-top: 3px;
+}
+div.custom-checkbox{
+  padding-top: 0px;
+  margin-top: 7px;
+}
+div.form-inline select{
+  height: 30px;
+}
+div.form-inline select:focus{
+  outline: none;
+  box-shadow: none;
+}
+div.form-inline input:focus{
+  outline: none;
+  box-shadow: none;
+}
+div.form-inline input{
+  outline: none;
+  box-shadow: none;
+  font-size: 10pt;
+}
+
+div.modal-content{
+  border-style: none;
+  border: none;
+font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+ -webkit-box-shadow: 1px 3px 14px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 3px 14px -2px rgba(0,0,0,0.75);
+box-shadow: 1px 3px 14px -2px rgba(0,0,0,0.75);
+}
+
+div.modal-footer{
+  padding-top: 25px;
+  padding-bottom: 0;
+  border: none;
+}
+div.modal-content button{
+  border-style: none;
+  border: none;
+  outline: none;
+}
+div.modal-content input{
+  outline: none;
+  box-shadow: none;
+}
+div.modal-content input:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+div.modal-content select{
+  font-size:14px;
+  height: 33px;
+}
+
+div.modal-content select:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+
+button.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+  box-shadow: none;
+  outline: none;
+}
+button.close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+div.modal-body label{
+  margin-top: 7px;
+  margin-bottom: 3px;
+  color: #21aa45;
+  font-weight: 500;
+}
+div.modal-body h5{
+  margin-top: 7px;
+  margin-bottom: 3px;
+  color: #484848;
+  font-weight: 500;
+}
+
+.modal-header{
+  background: #21aa45;
+  color: white;
+}
+
+.modal-footer .btn-cancelar{
+  background: #9f9f9f;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.modal-footer .btn-cancelar:hover{
+  background: #898989;
+}
+.modal-footer .btn-guardar{
+  background: #21aa45;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.modal-footer .btn-eliminar{
+  background: #21aa45;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.modal-footer .btn-eliminar:hover{
+  background: #1e9b3f;
+}
+.modal-footer .btn-guardar:hover{
+  background: #1e9b3f;
+}
+
+.custom-checkbox .custom-control-input.my-error~.custom-control-label{
+  background-color:none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+.custom-checkbox .custom-control-input.my-error~.custom-control-label::before{
+  background-color:none;
+  outline: none;
+  box-shadow: none;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+  background-color:#1e9b3f;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
